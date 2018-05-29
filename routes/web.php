@@ -11,14 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return '<h1>Primeira rota com Laravel</h1';
-});
-
-Route::get('/outra', function () {
-    return '<h1>Outra rota com Laravel</h1';
-});
-
 Route::get('/produtos', "ProdutoController@lista");
 
-// testes
+Route::get('/produtos/mostra', "ProdutoController@mostra");

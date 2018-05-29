@@ -13,4 +13,13 @@ class ProdutoController extends Controller {
 
         return view('produtos-listagem')->with('produtos', $produtos);
     }
+
+    public function mostra(){
+      $id = 1; // precisamos pegar o id de alguma forma
+      $resposta = DB::select('select * from produtos where id = ?', [$id]);
+      if(empty($resposta)) {
+        return "Esse produto não existe";
+      }
+      return view('detalhes')->with('p', $resposta[0]);
+      }
 }
