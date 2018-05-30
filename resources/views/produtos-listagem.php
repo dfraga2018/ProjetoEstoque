@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Controle de Estoque</title>
+        <title>Web 2 Estoque</title>
 
         <!-- Fonts -->
         <link href="/css/app.css" rel="stylesheet">
@@ -22,8 +22,8 @@
                   <td><?= $p->descricao ?></td>
                   <td><?= $p->quantidade ?></td>
                   <td>
-                    <a href="/produtos/mostra?id=<?= $p->id ?>">
-                      Visualizar
+                    <a href="/produtos/mostra/<?= $p->id ?>">
+                      <span class="glyphicon glyphicon-search"></span>
                     </a>
                   </td>
                 </tr>
