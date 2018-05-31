@@ -33,8 +33,16 @@ class ProdutoController extends Controller {
       $descricao = Request::input('descricao');
       $valor = Request::input('valor');
       $quantidade = Request::input('quantidade');
-      
-      return implode(', ', array($nome,
-        $descricao, $valor, $quantidade));
+
+      DB::table('produtos')->insert(   //      DB::insert('insert into produtos (outra forma de persistencia)
+          ['nome' =>$nome,             //      (nome, descricao, valor, quantidade) values (?,?,?,?)',
+           'descricao' => $descricao,  //        array($nome, $descricao, $valor, $quantidade));
+           'valor' => $valor,
+           'quantidade' => $quantidade
+          ]
+        );
+
+
+      return view('/produto.adicionado')->with('nome', $nome);
     }
 }
