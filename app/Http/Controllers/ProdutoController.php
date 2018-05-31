@@ -41,8 +41,6 @@ class ProdutoController extends Controller {
            'quantidade' => $quantidade
           ]
         );
-
-
       return view('/produto.adicionado')->with('nome', $nome);
     }
 }
